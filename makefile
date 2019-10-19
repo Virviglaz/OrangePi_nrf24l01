@@ -15,4 +15,5 @@ spi_dev: spi_dev.c
 main: main.c
 	${CC} -c -o main.o main.c -W${FLAGS}
 nrf_driver: nrf24l01+.o spi_dev.o main.o
+	cppcheck --enable=all *.c *.h
 	${CC} -o nrf nrf24l01+.o spi_dev.o main.o
